@@ -1,6 +1,5 @@
 ksttps://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
-
 머신 러닝에서 hello world 는 mnist 를 학습하는 것이다.
 
 
@@ -86,7 +85,7 @@ A softmax regression has two steps: first we add up the evidence of our input be
 다음 그림은 특정 모델이 학습한 가중치를 의미한다.
 빨간색은 음수 가중치, 파란색은 양수 가중치를 의미한다.
 
-그림.
+![alt text](https://www.tensorflow.org/versions/r0.9/images/softmax-weights.png)
 
 그리고 추가적인 증거로 불리는 bias 를 더한다.
 
@@ -136,8 +135,7 @@ And conversely, having one less unit of evidence means that a hypothesis gets a 
 
 아래 그림과 같은 형태로 표시할 수 있다.
 
-그림 ( fully connected net )
-
+![alt text](https://www.tensorflow.org/versions/r0.9/images/softmax-regression-scalargraph.png)
 
 그림 ( 가중함에 softmax )
 

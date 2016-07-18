@@ -73,10 +73,8 @@ mnist 는 라벨에서는 9 개가 0이고, 나머지 한개가 1 이다.
 
 
 소프트 맥스 는 두 단계로 이루어 진다.
-
-A softmax regression has two steps: first we add up the evidence of our input being in certain classes, and then we convert that evidence into probabilities.
 첫째, 입력 값이 특정 클래스 속한 다는 증거( evidence ) 를 더해간다.
-둘째 이 증거(?) 를 확률로 변경한다.
+둘째, 이 증거(?) 를 확률로 변경한다.
 
 이미지가 특정 클래스에 속한 다는 모든 증거를 더하기 위해서는 각 이미지의 점의 채도에 가중치를 부여(곱하여)하여 모두 더한다.
 가중치 값이 음수면, 특정 클래스에 속하지 않는다는 강한 증거이며, 양수이면 특정 클래스에 속한다는 것이다.

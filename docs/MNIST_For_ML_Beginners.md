@@ -160,13 +160,13 @@ tensorflow 는 이 오버헤드의 우회 방법을 가지고 있다.
 
 tensorflow 를 사용하기 위해서 import 해야 한다.
 
-파이선 코드 시작
+```python
  import tensorflow as tf
-파이선 코드 끝
+```
 
-파이선 코드 시작
+```python
  x = tf.placeholder (tf.float32, [ None, 784 ] )
-파이선 코드 끝
+```
 
 여기서 x 는 특정 값을 가지는 것이 아니고, 값을 받을 수 있는 placeholder 이며, tensorflow 가 동작할 때 이 placeholder에 입력해야 한다.
 이미지 개수에 상관없이 입력 받기 위해 None 사용
@@ -176,10 +176,10 @@ tensorflow 를 사용하기 위해서 import 해야 한다.
 머신 러닝에서 모델의 파라미터 ( 가중치, 바이어스 ) 는 Variable 이 일반적으로 사용 된다.
 
 
-파이선 코드 시작
+```python
  W = tf.Variable( tf.zeros([784,10] )
  b = tf.Variable( tf.zeros([10] )
-파이선 코드 끝
+```
 
 위 코드로 Variable 을 생성했으며, W, b 모두 0으로 초기화 함
 Since we are going to learn W and b, it doesn't matter very much what they initially are.
@@ -190,9 +190,9 @@ W * x 가 10차원 벡터이므로 b 도 10차원 벡터이다.
 
 따라서 다음 파이선 코드처럼 구현한다.
 
-파이선 코드 시작
+```python
  y = tf.nn.softmax( tf.matmul(x,W) + b )  
-파이선 코드 끝
+```
 
   x = [ none, 784 ], w=[784, 10 ]
   y = [ none, 10 ]
@@ -230,12 +230,15 @@ y 는 모델이 예측해야할 확률 분포이고, y’ 는 현재 모델에 �
 
 이 cross entropy 를 구현하기 위해, 먼저 실제 모델이 예측해야하는 값 ( 라벨) 을 담을 placeholder 를 만들어야 한다.
 
-python code
+```python
 y_ = tf.placeholder(tf.float32, [None, 10])
+```
 
 그럼 다음 코드로 cross entropy 를 계산할 수 있다.
 
+```python
 cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
+```
 
 tf.log 로 각 y 의 로그 값을 계산 한다.
 그리고 y 값에 맞는  라벨값 y_ 을 곱한다.
@@ -254,8 +257,9 @@ y*y_ 도  [ none, 10 ] 이다.
 
 그리고, 이제 모든 계산 그래프가 만들어 졌기 때문에, 아래 코드로 백프로파게이션을 수행하여 cross entropy 가 최소값이 되도록 훈련한다.
 
-python code
+```python
 train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
+```
 
 학습률은 0.5 이며, tensorflow 는 다른 많은 알고리즘을 제공한다.
 
@@ -265,21 +269,24 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 
 tensorflow 에서 variable 를 사용했다면, tensorflow .initialize_all_variables() 함수를 꼭 호출해야 한다.
 
-
+```python
 init = tf.initialize_all_variables()
-
+```
 
 위에서 정의한 모든 계산 작업의 그래프는 tensorflow. Session() 이용해야지만, 실행할 수 있다.
 
+```python
 sess = tf.Session()
 sess.run(init)
-
+```
 
 1000 번을 학습하는 코드는 아래와 같다.
 
+```python
 for i in range(1000):
   batch_xs, batch_ys = mnist.train.next_batch(100)
   sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+```
 
 한 번에 100개의 훈련 데이터를 가져오며,
 x, y_ 에 값을 할당한다.

@@ -9,9 +9,6 @@ MNIST 는 사람이 손으로 쓴  0 - 9 사이의  수를 의미하는 자료�
 
 여기서, 각 그림이 어떤 수자인지 예측할 수 있도록 훈련 시킬 것이다.
 
-?
-In this tutorial, we're going to train a model to look at images and predict what digits they are. Our goal isn't to train a really elaborate model that achieves state-of-the-art performance -- although we'll give you code to do that later! -- but rather to dip a toe into using TensorFlow
-
 이 투토리얼에서 이미지가 어떤 숫자인지 판단하는 모델(?) 을 훈련 시킬 것이다. 
 
 실제로 훌륭한 ( state-of-the-art ) 성능을 내는 정교한 모델을 훈련시키는 것이 아니라

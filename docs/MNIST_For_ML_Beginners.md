@@ -86,7 +86,7 @@ mnist 는 라벨에서는 9 개가 0이고, 나머지 한개가 1 이다.
 
 Basically, we want to be able to say that some things are more likely independent of the input. 
 
-수식
+![증거 evidence](https://latex.codecogs.com/gif.latex?evidence_%7Bi%7D%20%3D%20%5Csum_%7Bj%7D%5E%7B%3F%7D%20W_%7Bi%2Cj%7D%20x_%7Bj%7D%20&plus;%20b_%7Bi%7D)
 
 evidence(i) = sum ( W(i,j) * x(j) , iter=j ) + b(i)
 

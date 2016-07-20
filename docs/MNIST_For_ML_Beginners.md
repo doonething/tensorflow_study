@@ -194,17 +194,27 @@ W * x 가 10차원 벡터이므로 b 도 10차원 벡터이다.
   y = [ none, 10 ]
 
 첫째, x 에 W 를 곱한 코드가 tf.matmul(x,W ) 이다. 
+
 This is flipped from when we multiplied them in our equation, where we had Wx
 , as a small trick to deal with x being a 2D tensor with multiple inputs.
-원래 W 에 x 를 곱하지만, x가 2D 텐서라서 살짝(?) 바꾼거 같다.
+
+원래 W 에 x 를 곱하지만, x가 벡터가 아닌,  2D 텐서 즉, 행렬이라서 x 에 W 를 곱해 순서를  바꾼거 같다.
+
+> 행렬과 벡터 곱셈은 순서가 변하면 값도 변하거나 계산 불가능해진다. 
+> 만약 여기서 W x 를 했다면 , 즉,  tf.matnul(W,x) 를 했다면,
+> [784,10] * [None,784] 가 되고
+> 실제 55000 개중 100개씩 batch 로  입력되므로   [784,10] * [100,784] 가 되어 계산 불가능해 진다. 
+
+
 그리고 b 를 더한 다음 softmax 를 사용했다.
 
 이것이다. 설정 관련 몇 줄 후에 , 이 한줄로 모델을 정의한 것이다.
-That isn't because TensorFlow is designed to make a softmax regression particularly easy: 
-( 무슨 소리인지 모름 ) 
-tensorflow 가 소프트맥스 회귀 분석을 위해 디자인 된 것이 아니다. ( ? )
-it's just a very flexible way to describe many kinds of numerical computations, from machine learning models to physics simulations. 
-이렇게 하는 것은 머신러닝에서 부터 물리적 시뮬레이션까지 적용 되는 유연한 계산 방법이다.
+
+That isn't because TensorFlow is designed to make a softmax regression particularly easy: it's just a very flexible way to describe many kinds of numerical computations, from machine learning models to physics simulations. 
+
+이렇게 한 줄로 정의 할 수 있었던 것은  tensorflow 가 특정 소프트맥스 회귀 분석을 위해 디자인된게   아니라,
+단순히, 머신러닝에서 부터 물리적 시뮬레이션까지 적용 할 수 있게  유연한 방법을 제공했기 때문이다.
+
 한 번 정의 된 이 모델은, 다른 장비에서 실행 될 수 있다. cpu , gpu , phone 에서도 실행 된다.
 
 

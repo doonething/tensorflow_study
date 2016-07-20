@@ -1,4 +1,4 @@
-ksttps://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+번역 ![MNIST For ML Beginners](https://www.tensorflow.org/versions/r0.9/tutorials/mnist/beginners/index.html)
 
 머신 러닝에서 hello world 는 mnist 를 학습하는 것이다.
 

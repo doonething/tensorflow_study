@@ -107,9 +107,9 @@ j 가  x 의 이미지의 각 픽셀의 인덱스를 의미한다.
 
 
 좀더 , 자세히
-                          exp ( x(i) ) 
-  softmax ( x(i) )  = ——————————————————
-                     sum ( exp(x(j) ), j )
+
+ ![softmax equation](https://latex.codecogs.com/gif.latex?softmax%28x%29_%7Bi%7D%3D%5Cfrac%7Bexp%28x_%7Bi%7D%29%7D%7B%5Csum_%7Bj%7D%5E%7B%3F%7Dexp%28x_%7Bj%7D%29%7D)
+
 
 이 소프트맥스 의미는 입력을 지수적( exponentiating ) 으로 변경하고, 정규화( normalizing ) 한거로 볼 수 있다.
 

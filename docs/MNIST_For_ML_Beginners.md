@@ -132,9 +132,12 @@ And conversely, having one less unit of evidence means that a hypothesis gets a 
 
 ![alt text](https://www.tensorflow.org/versions/r0.9/images/softmax-regression-scalargraph.png)
 
-그림 ( 가중함에 softmax )
+그림 ( 가중합에 softmax )
+
+![weighted sum and softmax](https://www.tensorflow.org/versions/r0.9/images/softmax-regression-scalarequation.png)
 
 그림 ( 매트릭스 벡터 곱 )
+![matrix vector](https://www.tensorflow.org/versions/r0.9/images/softmax-regression-vectorequation.png)
 
 식  y = softmax ( Wx + b )
 

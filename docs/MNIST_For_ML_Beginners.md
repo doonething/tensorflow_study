@@ -226,7 +226,10 @@ That isn't because TensorFlow is designed to make a softmax regression particula
 일반적으로 , cross entropy 함수가 좋다. 
 놀랍게도, 정보 이론에서, 정보 압축을 위해 탄생된 이 cross entropy 는, 게임에서 부터 머신러닝 까지 많은 다른 분야에서 사용 된다.
 
-식   H(y, y’)  = - sum ( y’(i) log(y(i) ), i )
+![cross entropy](https://latex.codecogs.com/gif.latex?H_%7B%7By%7D%27%7D%28y%29%3D-%5Csum_%7Bi%7D%5E%7B%3F%7D%7By%7D%27_%7Bi%7D%5Clog%7By_%7Bi%7D%7D)
+
+latex : H_{{y}'}(y)=-\sum_{i}^{?}{y}'_{i}\log{y_{i}}
+
 
 y 는 모델이 예측해야할 확률 분포이고, y’ 는 현재 모델에 의해 계산된 확률 분포이다.
 대충, 예측한 값이 얼마나 틀린 것인지 보여준다고 할 수 이다. 

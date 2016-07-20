@@ -251,15 +251,16 @@ cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=
 
 tf.log 로 각 y 의 로그 값을 계산 한다.
 그리고 y 값에 맞는  라벨값 y_ 을 곱한다.
-그리고 tf.reduce_sum () 으로 , y*y_ 로 부터 만들어진 행렬에서  두 번째 요소를 모두 더한다.
-
-y*y_ 는 행렬 곱이 아니다.
-y, y_ 모두  [ none, 10 ] 이고, 
-y*y_ 는 행렬 곱이 아니라, 동일 행렬이므로 같은 자리 원소값만 곱한다. 
-y*y_ 도  [ none, 10 ] 이다.
-즉 , y*y_ = yy 일때,   yy(i,j) = y(i,j) * y_(i,j) 이다.
-
+그리고 tf.reduce_sum () 으로 , y*y_ 로 부터 만들어진 행렬에서  두 번째 요소를 모두 더한다.<dl><br></dl>
 두 번째 요소라는 의미는 reduce_sum 의 두 번째 인자인  reduction_indices=[1] 에서 정의 된다.
+
+<dl>
+y*y_ 는 행렬 곱이 아니다. <br>
+y, y_ 모두  [ none, 10 ] 이고, <br>
+y*y_ 는 행렬 곱이 아니라, 동일 행렬이므로 같은 자리 원소값만 곱한다. <br>
+y*y_ 도  [ none, 10 ] 이다. <br>
+즉 , y*y_ = yy 일때,   yy(i,j) = y(i,j) * y_(i,j) 이다.
+</dl>
 
 그리고 reduce_mean 으로 평균을 구한다
 
